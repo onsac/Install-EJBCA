@@ -90,6 +90,45 @@ sudo cp /opt/wildfly/docs/contrib/scripts/systemd/launch.sh /opt/wildfly/bin/
 ```sh
 sudo sh -c 'chmod +x /opt/wildfly/bin/*.sh'
 ```
+```sh
+sudo cp /opt/wildfly/docs/contrib/scripts/systemd/wildfly.service /etc/systemd/system/
+```
+```sh
+vi /opt/wildfly/bin/standalone.conf 
+```
+```sh
+> JAVA_OPTS="-Xms2048m -Xmx2048m -Djava.net.preferIPv4Stack=true"
+```
+```sh
+sudo systemctl deamon-reload
+```
+```sh
+sudo systemctl enable wildfly
+```
+```sh
+sudo systemctl start wildfly
+```
+```sh
+reboot
+```
+```sh
+http:192.168.1?:8080
+```
+```sh
+sudo -s
+```
+```sh
+cd /tmp
+```
+```sh
+wget https://downloads.mariadb.com/Connectors/java/connector-java-2.2.6/mariadb-java-client-2.2.6.jar
+```
+```sh
+sudo -u wildfly cp /tmp/mariadb-java-client-2.2.6.jar /opt/wildfly/standalone/deployments/mariadb-java-client.jar
+```
+```sh
+cd /opt/wildfly/bin
+```
 
 
 
