@@ -229,6 +229,176 @@ ejbca_ce_7_4_0] # cd conf
 ```sh
 >: # cd ejbca_ce_7_4_0/
 ```
+>: ejbca_ce_7_4_0]# sudo -u wildfly ant -q clean deployer
+```
+```sh
+>: # sudo -u wildfly ant -q runistall
+```
+```sh
+>: # cd /opt/wildfly/bin
+```
+```sh
+>: # . /jboss-cli.sh -c
+```
+```sh
+ >:  /subsystem=remotin/http-connector=http-remoting-connector:remove
+ total time : 2 seconds 
+```
+```sh
+ >: # cd /opt/wildfly/bin
+```
+```sh
+>: # ./jboss-cli.sh -c
+```
+```sh
+ >: /subsystem=remotin/http-connector=http-remoting-connector:add(connector-ref= remoting",security - realm="applicationRealm"
+ ```
+```sh
+ >:/socket-binding-group=standard-sockets/socket-binding=remoting:add (port="444")
+ ```
+```sh
+ /subsystem=undertow/server=defalt-server/http-listener=remoting:add(socket-binding=remoting)
+ ```
+```sh
+ >:reload
+ ```
+```sh
+ >: subsystem=logging?kogger=onrg.ejbca:add
+ ```
+```sh
+ >: subsystem=logging?kogger=onrg.ejbca:add
+ ```
+```sh
+ >: subsystem=logging?kogger=onrg.ejbca:add
+ ```
+```sh
+ >: subsytem=logging/logger=org.cesecore:add
+ ```
+```sh
+ >: subsytem=logging/logger=org.cesecore:write-attribute(name=level, value=DEBUG)
+ ```
+```sh
+ >: reload
+ ```
+```sh
+quit
+```
+```sh
+>:ls
+```
+```sh
+>: cd /opt
+```
+```sh
+>: ejbca_ce_7_4_0/
+```
+```sh
+[root@localhost ejbca_ce_7_4_0]#
+```
+```sh
+>: sudo -u wildfly ant -q runinstall3
+```
+```sh
+>: initializing CA with 'EJBCA-management-CA',o=EJBCA POC,C=US' 'soft' '<ca.token
+password hidden>' '4096' 'RSA' '10950' 'null' ' SHA256WIThRSA'   -superadmincn 'SuperAdmin...
+```
+```sh
+>: batch tomcat
+```
+```sh
+>: batch superadmincn
+```
+```sh
+>: getting root certificate in DER format...
+```
+```sh
+>: ca getcacert  "EJBCA-management-CA" /tmp/rootca.der -der
+```
+```sh
+[root@localhost ejbca_ce_7_4_0]# sudo -u wildfly ant deploy-keystore
+```
+
+192.168.50.147.8080/ejbca/
+
+>: # cd /opt/wildfly/bin
+ >: # ./jboss-cli.sh -c
+ 
+ >: /subsystem=undertow/server=default-server/http-listener=default:remove
+ 
+ >: /socket-binding-group=standard-sockets-binding=http:remove
+ 
+ >: reload
+ 
+ >: /interface=http:add(inet-address="0.0.0.0")
+ 
+ >: /interface=http:add(inet-address="0.0.0.0")
+ 
+ >: /interface=http:add(inet-address="0.0.0.0")
+
+ >: /interface=http:add(inet-address="0.0.0.0")
+
+>: /socket-binding-group=standard-sockets/socket-binding=http:add(port="8080",interface
+="http")
+
+>: /subsystem=undertow/server=default-server/http:add(socket-binding=http
+ 
+>: /subsystem=undertow/server=default-server/http-listener=http:write-attribute (name=re
+direct-socket,value"httpspriv")
+
+>:reload
+
+>: /core-service=management/security-realm=SSLRealm:add()
+
+>: /core-service=management/security-realm=SSLRealm/server-indenty=ssl:add(keystore-pa
+th="S {jboss.server.config.dir}/keystore/keystore.jks",keystore-password=serverpwd", alias="localhost")
+
+>: /core-service=management/security-realm=SSLRealm/server-indenty=ssl:add(keystore-pa
+th="S {jboss.server.config.dir}/keystore/truststoretore.jks",keystore-password="changeint")
+
+>: /socket-binding-group=standard-sockets/socket-binding=httpspriv:add(port="8443",interface="httpspriv")
+
+>: /socket-binding-group=standard-sockets/socket-binding=httpspub:add(port="8442",interface="httpspub") 
+
+>: reload
+
+>: /subsyatem=undertow/server=default-server/http-listener=httpspriv:add(socket-binding
+=httpspriv, security-realm="SSLRealm", verify-client-REQUIRED)
+
+>: /subsyatem=undertow/server=default-server/http-listener=httpspub:add(socket-binding=httpspub, security-realm"SSLRealm")
+
+>: reload
+
+>: /system-property=org.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH:add(value=true
+
+>: /system-property=org.apache.catalina.connector.coyoteAdapter.ALLOW_BACKSLASH:add(value=true)
+
+>: /system=property=org.apache.catalina.connector.URI_ENCODING:add(value="UTF-8")
+
+>: /system-property=org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING:add(value=true)
+
+>: /subsystem=webservices:write-attribute(name=wsdl-host, value=jbossws.undefined.host)
+
+>: /subsytem=webservices:write-attribute(name=modify-wsdl-address, value=true)
+ 
+>: :reload
+
+>: quit
+
+>: cd /opt/ejbca_ce_7_4_0/
+
+>: ls
+
+>:cd pq12
+
+>: cd superadmincn.p12 /tmp
+
+>: cd tmp
+
+>: cd tmp
+
+>: ls
+
+>: chmod 755 superadmincn.p12
 
 
 
