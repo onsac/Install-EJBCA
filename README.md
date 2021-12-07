@@ -129,8 +129,106 @@ sudo -u wildfly cp /tmp/mariadb-java-client-2.2.6.jar /opt/wildfly/standalone/de
 ```sh
 cd /opt/wildfly/bin
 ```
-
-
+```sh
+./jboss-cli.sh -c
+>data-source add --name=ejbcads --driver-name="mariadb-java-client.jar" --connection-
+url="jdbc:mysql://127.0..0.1:3306/ejbca" --jndi - name="Java:/EJbcaDS" -- use-ccm=true --driver-class="org.maiadb.jdb
+c . Driver" --user-name="ejbca" --password="ejbca" --validate-on-match=true -- background-validation=false --prepared
+-statements-cache-size=50 --share-prepared-statements=true --min-pool-size=5 --max-pool-size=150 --pool - prefill=tr
+ue --transaction-isolation=TRANSACTION_READ_COMMITTED --check-valid-connection-sql="select 1;"
+```
+```sh
+>:reload
+```
+```sh
+>quit
+```
+```sh
+>: # mv ejbca_ce_7_4_0. zip /opt
+mv: cannot stat `ejbca ce_7_4_0.zip´: No such file or directory
+```
+```sh
+>: # cd /tmp
+```
+```sh
+>: # mv ejbca_ce_7_4_0.zip /opt
+```
+```sh
+>: # ls 
+```
+```sh
+>: # rm wildfly-10.1.0.Final.tar.gz 
+rm: remove regular file 'wildfly-10.1.0.final.tar.gz´? y
+```
+```sh
+>: # rm mariadb-java-client-2.2.6.jar
+rm: remove regular file `mariadb-java-client-2.2.6.jar´?y
+```
+```sh
+>: # cd /opt
+```
+```sh
+>: ls
+```
+```sh
+>: # sudo unzip ejbca_ce_7_4_0. zip
+```
+```sh
+>: # rm ejbca_ce_7_4_0.zip
+rm: remove regular file `ejbca_ce_7_4_0.zip´ ? y
+```
+```sh
+>: # ls 
+```
+```sh
+>: # cd ejbca_ce_7_4_0/
+ejbca_ce_7_4_0] # cd conf
+```
+```sh
+>: vi database.properties
+```
+```sh
+>:wq!
+```
+```sh
+>: vi cesecore.properties
+```
+```sh
+>:wq!
+```
+```sh
+>: # vi ejbca.properties
+```
+```sh
+>: #ejbca.profuctionmode=true
+```
+```sh
+>: #ejbca.productionmode=false
+```
+```sh
+>:wq!
+```
+```sh
+>: # vi install.properties
+```
+```sh
+>: wq!
+```
+```sh
+>: # vi web.properties
+```
+```sh
+>: # cd /opt
+```
+```sh
+>: # sudo chown -R wildfly: ejbca_ce_7_4_0
+```
+```sh
+>: # ls
+```
+```sh
+>: # cd ejbca_ce_7_4_0/
+```
 
 
 
