@@ -229,6 +229,7 @@ ejbca_ce_7_4_0] # cd conf
 ```sh
 >: # cd ejbca_ce_7_4_0/
 ```
+```sh
 >: ejbca_ce_7_4_0]# sudo -u wildfly ant -q clean deployer
 ```
 ```sh
@@ -317,88 +318,128 @@ password hidden>' '4096' 'RSA' '10950' 'null' ' SHA256WIThRSA'   -superadmincn '
 ```sh
 [root@localhost ejbca_ce_7_4_0]# sudo -u wildfly ant deploy-keystore
 ```
-
+```sh
 192.168.50.147.8080/ejbca/
-
+```
+```sh
 >: # cd /opt/wildfly/bin
+```
+```sh
  >: # ./jboss-cli.sh -c
- 
+ ```
+ ```sh
  >: /subsystem=undertow/server=default-server/http-listener=default:remove
- 
+ ```
+ ```sh
  >: /socket-binding-group=standard-sockets-binding=http:remove
- 
+ ```
+ ```sh
  >: reload
- 
+ ```
+ ```sh
  >: /interface=http:add(inet-address="0.0.0.0")
- 
+ ```
+ ```sh
  >: /interface=http:add(inet-address="0.0.0.0")
- 
+ ```
+ ```sh
  >: /interface=http:add(inet-address="0.0.0.0")
-
+ ```
+```sh
  >: /interface=http:add(inet-address="0.0.0.0")
-
+ ```
+```sh
 >: /socket-binding-group=standard-sockets/socket-binding=http:add(port="8080",interface
 ="http")
-
+```
+```sh
 >: /subsystem=undertow/server=default-server/http:add(socket-binding=http
- 
+```
+ ```sh
 >: /subsystem=undertow/server=default-server/http-listener=http:write-attribute (name=re
 direct-socket,value"httpspriv")
-
+```
+```sh
 >:reload
-
+```
+```sh
 >: /core-service=management/security-realm=SSLRealm:add()
-
+```
+```sh
 >: /core-service=management/security-realm=SSLRealm/server-indenty=ssl:add(keystore-pa
 th="S {jboss.server.config.dir}/keystore/keystore.jks",keystore-password=serverpwd", alias="localhost")
-
+```
+```sh
 >: /core-service=management/security-realm=SSLRealm/server-indenty=ssl:add(keystore-pa
 th="S {jboss.server.config.dir}/keystore/truststoretore.jks",keystore-password="changeint")
-
+```
+```sh
 >: /socket-binding-group=standard-sockets/socket-binding=httpspriv:add(port="8443",interface="httpspriv")
-
->: /socket-binding-group=standard-sockets/socket-binding=httpspub:add(port="8442",interface="httpspub") 
-
+```
+```sh
+>: /socket-binding-group=standard-sockets/socket-binding=httpspub:add(port="8442",interface="httpspub")
+```
+```sh
 >: reload
-
+```
+```sh
 >: /subsyatem=undertow/server=default-server/http-listener=httpspriv:add(socket-binding
 =httpspriv, security-realm="SSLRealm", verify-client-REQUIRED)
-
+```
+```sh
 >: /subsyatem=undertow/server=default-server/http-listener=httpspub:add(socket-binding=httpspub, security-realm"SSLRealm")
-
+```
+```sh
 >: reload
-
->: /system-property=org.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH:add(value=true
-
+```
+```sh
+>: /system-property=org.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH:add(value=true)
+```
+```sh
 >: /system-property=org.apache.catalina.connector.coyoteAdapter.ALLOW_BACKSLASH:add(value=true)
-
+```
+```sh
 >: /system=property=org.apache.catalina.connector.URI_ENCODING:add(value="UTF-8")
-
+```
+```sh
 >: /system-property=org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING:add(value=true)
-
+```
+```sh
 >: /subsystem=webservices:write-attribute(name=wsdl-host, value=jbossws.undefined.host)
-
+```
+```sh
 >: /subsytem=webservices:write-attribute(name=modify-wsdl-address, value=true)
- 
+```
+ ```sh
 >: :reload
-
+```
+```sh
 >: quit
-
+```
+```sh
 >: cd /opt/ejbca_ce_7_4_0/
-
+```
+```sh
 >: ls
-
+```
+```sh
 >:cd pq12
-
+```
+```sh
 >: cd superadmincn.p12 /tmp
-
+```
+```sh
 >: cd tmp
-
+```
+```sh
 >: cd tmp
-
+```
+```sh
 >: ls
-
+```
+```sh
 >: chmod 755 superadmincn.p12
+```
 
 
 
