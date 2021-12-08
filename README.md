@@ -112,7 +112,7 @@ sudo systemctl start wildfly
 reboot
 ```
 ```sh
-http:192.168.1?:8080
+http:192.168.1:8080
 ```
 ```sh
 sudo -s
