@@ -146,7 +146,7 @@ Download EJBCA
 cd /tmp
 ```
 ```sh
-mv ejbca_ce_7_4_0.zip /opt
+mv ejbca_ce_7_4_3_2.zip /opt
 ```
 ```sh
 ls 
