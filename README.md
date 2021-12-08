@@ -221,7 +221,7 @@ ls
 cd ejbca_ce_7_4_3_2/
 ```
 ```sh
-sudo -u wildfly ant -q clean deployer
+sudo -u wildfly ant -q clean deployear
 ```
 ```sh
 sudo -u wildfly ant -q runistall
