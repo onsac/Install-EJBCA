@@ -100,7 +100,7 @@ vi /opt/wildfly/bin/standalone.conf
 > JAVA_OPTS="-Xms2048m -Xmx2048m -Djava.net.preferIPv4Stack=true"
 ```
 ```sh
-sudo systemctl deamon-reload
+sudo systemctl daemon-reload
 ```
 ```sh
 sudo systemctl enable wildfly
