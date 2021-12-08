@@ -174,12 +174,14 @@ cd ejbca_ce_7_4_3_2/
 cd conf
 ```
 ```sh
+cp database.properties.sample database.properties
 vi database.properties
 ```
 ```sh
 >:wq!
 ```
 ```sh
+cp cesecore.properties.sample cesecore.properties
 vi cesecore.properties
 ```
 ```sh
