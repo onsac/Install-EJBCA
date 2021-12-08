@@ -188,46 +188,46 @@ vi cesecore.properties
 >:wq!
 ```
 ```sh
+cp ejbca.properties.sample ejbca.properties
 vi ejbca.properties
-```
-```sh
->: #ejbca.profuctionmode=true
-```
-```sh
->: #ejbca.productionmode=false
 ```
 ```sh
 >:wq!
 ```
 ```sh
->: # vi install.properties
+cp install.properties.sample install.properties
+vi install.properties
 ```
 ```sh
 >: wq!
 ```
 ```sh
->: # vi web.properties
+cp web.properties.sample web.properties
+vi web.properties
 ```
 ```sh
->: # cd /opt
+>: wq!
 ```
 ```sh
->: # sudo chown -R wildfly: ejbca_ce_7_4_0
+cd /opt
 ```
 ```sh
->: # ls
+sudo chown -R wildfly: ejbca_ce_7_4_3_2
 ```
 ```sh
->: # cd ejbca_ce_7_4_0/
+ls
 ```
 ```sh
->: ejbca_ce_7_4_0]# sudo -u wildfly ant -q clean deployer
+cd ejbca_ce_7_4_3_2/
 ```
 ```sh
->: # sudo -u wildfly ant -q runistall
+sudo -u wildfly ant -q clean deployer
 ```
 ```sh
->: # cd /opt/wildfly/bin
+sudo -u wildfly ant -q runistall
+```
+```sh
+cd /opt/wildfly/bin
 ```
 ```sh
 >: # . /jboss-cli.sh -c
