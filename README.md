@@ -163,33 +163,30 @@ rm mariadb-java-client-2.2.6.jar
 cd /opt
 ```
 ```sh
-sudo unzip ejbca_ce_7_4_0. zip
+sudo unzip ejbca_ce_7_4_3_2.zip
 ```
 ```sh
-rm ejbca_ce_7_4_0.zip
-   remove regular file `ejbca_ce_7_4_0.zip´ ? y
+rm ejbca_ce_7_4_3_2.zip
+   remove regular file `ejbca_ce_7_4_3_2.zip´ ? y
 ```
 ```sh
->: # ls 
+cd ejbca_ce_7_4_3_2/
+cd conf
 ```
 ```sh
->: # cd ejbca_ce_7_4_0/
-ejbca_ce_7_4_0] # cd conf
-```
-```sh
->: vi database.properties
+vi database.properties
 ```
 ```sh
 >:wq!
 ```
 ```sh
->: vi cesecore.properties
+vi cesecore.properties
 ```
 ```sh
 >:wq!
 ```
 ```sh
->: # vi ejbca.properties
+vi ejbca.properties
 ```
 ```sh
 >: #ejbca.profuctionmode=true
