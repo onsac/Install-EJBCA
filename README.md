@@ -131,11 +131,7 @@ cd /opt/wildfly/bin
 ```
 ```sh
 ./jboss-cli.sh -c
->data-source add --name=ejbcads --driver-name="mariadb-java-client.jar" --connection-
-url="jdbc:mysql://127.0..0.1:3306/ejbca" --jndi - name="Java:/EJbcaDS" -- use-ccm=true --driver-class="org.maiadb.jdb
-c . Driver" --user-name="ejbca" --password="ejbca" --validate-on-match=true -- background-validation=false --prepared
--statements-cache-size=50 --share-prepared-statements=true --min-pool-size=5 --max-pool-size=150 --pool - prefill=tr
-ue --transaction-isolation=TRANSACTION_READ_COMMITTED --check-valid-connection-sql="select 1;"
+>data-source add --name="ejbcads" --driver-name="mariadb-java-client.jar" --connection-url="jdbc:mysql://127.0.0.1:3306/ejbca" --jndi-name="Java:/EJbcaDS" --use-ccm=true --driver-class="org.maiadb.jdbc.Driver" --user-name="ejbca" --password="ejbca" --validate-on-match=true --background-validation=false --prepared-statements-cache-size=50 --share-prepared-statements=true --min-pool-size=5 --max-pool-size=150 --pool-prefill=true --transaction-isolation=TRANSACTION_READ_COMMITTED --check-valid-connection-sql="select 1;"
 ```
 ```sh
 >:reload
