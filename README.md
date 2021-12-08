@@ -21,7 +21,7 @@ yum install htop
 yum update install
 ```
 ```sh
-stop firewall-cmd
+firewall-cmd --state
 ```
 ```sh
 yum install mariadb-server
