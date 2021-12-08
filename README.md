@@ -140,38 +140,34 @@ cd /opt/wildfly/bin
 >quit
 ```
 ```sh
->: # mv ejbca_ce_7_4_0. zip /opt
-mv: cannot stat `ejbca ce_7_4_0.zip´: No such file or directory
+Download EJBCA
 ```
 ```sh
->: # cd /tmp
+cd /tmp
 ```
 ```sh
->: # mv ejbca_ce_7_4_0.zip /opt
+mv ejbca_ce_7_4_0.zip /opt
 ```
 ```sh
->: # ls 
+ls 
 ```
 ```sh
->: # rm wildfly-10.1.0.Final.tar.gz 
-rm: remove regular file 'wildfly-10.1.0.final.tar.gz´? y
+rm wildfly-10.1.0.Final.tar.gz 
+   remove regular file 'wildfly-10.1.0.final.tar.gz´? y
 ```
 ```sh
->: # rm mariadb-java-client-2.2.6.jar
-rm: remove regular file `mariadb-java-client-2.2.6.jar´?y
+rm mariadb-java-client-2.2.6.jar
+   remove regular file `mariadb-java-client-2.2.6.jar´?y
 ```
 ```sh
->: # cd /opt
+cd /opt
 ```
 ```sh
->: ls
+sudo unzip ejbca_ce_7_4_0. zip
 ```
 ```sh
->: # sudo unzip ejbca_ce_7_4_0. zip
-```
-```sh
->: # rm ejbca_ce_7_4_0.zip
-rm: remove regular file `ejbca_ce_7_4_0.zip´ ? y
+rm ejbca_ce_7_4_0.zip
+   remove regular file `ejbca_ce_7_4_0.zip´ ? y
 ```
 ```sh
 >: # ls 
